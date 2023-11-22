@@ -21,6 +21,12 @@ class PublicController extends Controller
         $text= $request->input('text');
 
         Mail::to($email)->send(new reclamo);
+        return redirect(route('reclamo_sorry'));
+    }
+
+    public function reclamo_sorry(){
+
+        return view('reclamo_sorry');
     }
 
 }
